@@ -1,0 +1,450 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+div.above-part {
+    margin: 40px 40px 40px 40px;
+
+
+}
+
+div.navigation {
+    position: relative;
+    display: flex;
+    float: right;
+    position: static;
+}
+
+div .navigation ul li {
+    list-style-type: none;
+    float: left;
+    top: 50;
+    margin: 35PX;
+    margin-top: -30px;
+}
+
+div .navigation ul a {
+    display: inline;
+    text-decoration: none;
+}
+
+.active {
+    position: relative;
+    color: white;
+    background-color: blueviolet;
+    border-radius: 5px;
+    padding: 15px 30px;
+    transform: translateY(-20px);
+
+}
+
+div .home-space img {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-left: 50px;
+
+}
+
+div.home-space .logo {
+    transform: translateY(-300px);
+    margin-left: 100px;
+    height: 20px;
+    width: 150px;
+
+}
+
+div.home-space .line {
+    margin-top: 90px;
+}
+
+div .home-space p {
+    transform: translateY(-250px);
+    margin-left: 100px;
+    font-size: x-large;
+}
+
+div.home-space button {
+    transform: translateY(-210px);
+    margin-left: 130px;
+    padding: 15px 50px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 500;
+    font-size: large;
+    border: none;
+    background-color: rgb(131, 43, 214);
+}
+div.home-space button:hover{
+    background-color: rgb(6, 6, 44);
+}
+div.home-space .guard {
+    transform: translateX(-500px);
+    transform: translateY(-600px);
+    margin-left: 600px;
+
+}
+
+div.home-space .middle-content {
+    background: blueviolet;
+    border: 1px solid blueviolet;
+    transform: translateY(-600PX);
+    padding: 60px;
+    width: 50%;
+    z-index: 1;
+    position: relative;
+
+    margin-left: 23%;
+    font-size: xx-large;
+    color: rgb(7, 7, 65);
+    text-align: center;
+    border-radius: 5px;
+
+}
+
+.below-part {
+    background-color: rgba(236, 214, 232, 0.7);
+    transform: translateY(-680px);
+    margin-left: -3%;
+    margin-right: -3%;
+    z-index: 0;
+    position: relative;
+display: flex;
+
+}
+
+
+
+div.different-services img {
+    height: 90px;
+    width: 90px;
+
+}
+
+div.different-services {
+    margin-top: 50px;
+}
+
+
+.service1, .service2 ,.service3 ,.service4 ,.service5 ,.service6  {
+    display: Flex;
+    float: right;
+     border: 1px  solid rgba(132, 0, 255, 0.7);
+     box-shadow: 1px  0px  1px 1px rgb(138, 43, 226,0.7);
+background-color: rgb(255, 255, 255);
+border-radius: 10px;
+align-items: center;
+position: static;
+    padding: 60px 40px;
+    border: 1px solid black;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-bottom: 100px;
+
+}
+
+.service1 p,.service2 p, .service3 p, .service3 p, .service4 p, .service5 p,.service6 p  {
+width:200px;
+justify-content: center;
+text-align: justify;
+
+}
+
+.first-how{
+ 
+margin-top: -500px;
+width: 520px;
+text-align: left;
+text-align: justify;
+margin-left: 100px;
+border: 1px solid rgb(138, 43, 226,0.7);
+height: 200px;
+border-radius: 20px;
+box-shadow: 2px 2px -2px 2px  blueviolet;
+background-color: rgb(205, 204, 206);
+    
+}
+
+.first-how p{
+    margin-left: 50px;
+
+}
+
+.first-how h3{
+    margin-top: 10px;
+    margin-left: 100px;
+}
+
+.how-it-works{
+    background-color: rgba(236, 214, 232, 0.7) ;
+    transform: translateY(-180px);
+    margin-left: -3%;
+    margin-right: -3%;
+    z-index: 0;
+    outline: rgb(0, 0, 139) 50px top;
+
+}
+
+.first-how  img{
+    transform: translateX(500px);
+    margin-top: -200px;
+}
+
+.second-how{
+    float: right;
+    margin-top: 100px;
+width: 600px;
+text-align: right;
+text-align: justify;
+margin-right: 100px;
+border: 1px solid rgb(138, 43, 226,0.7);
+height: 200px;
+border-radius: 20px;
+box-shadow: 2px 2px -2px 2px  blueviolet;
+background-color: rgb(205, 204, 206);
+    
+}
+
+.second-how p{
+
+    margin-left: 10px;
+}
+
+.second-how img{
+    transform: translateX(-300px);
+    margin-top: -150px
+}
+
+
+.second-how h4{
+      margin-top: 10px;
+    margin-left: 100px;
+}
+
+.download-pass{
+    margin-top: 400PX;
+    margin-left: 20%;
+
+}
+
+
+.footer{
+    background-color: rgb(3, 3, 27,0.7);
+    color: rgb(0, 0, 0);
+    font-style: normal;
+    font-size:small;
+    height:200px;
+    font-family:'Times New Roman', Times, serif;
+    display: flex;
+  
+
+
+}
+
+
+.first{
+    margin-top: 40px;
+    margin-left: 60px;
+
+}
+.first span{
+    font-size: medium;
+    font-weight: 600;
+    color: rgb(5, 5, 32);
+}
+
+.second{
+    margin-top: 40px;
+    margin-left: 250px;
+
+}
+
+h6{
+    font-size: larger;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.third{
+    margin-top:40px ;
+    margin-left:250px ;
+}
+
+.third p{
+    font-size: larger;
+    font-weight: 600;
+    margin-bottom: 10px; 
+}
+.download-pass{
+    transform: translateY(180px);
+    background-color: rgba(236, 214, 232, 0.7) ;
+    width: 100%;
+    height: 180px;
+    margin-left: -5px;
+    position: static;
+}
+
+.conn{
+    margin-left: 450px;
+    border: 1px solid black;
+    width: 40%;
+    height: 200px;
+    transform: translateY(-100px);
+    text-align: center;
+    justify-content: center;
+
+   
+}
+
+.conn button{
+    border-radius: 5px;
+    border: none;
+    background-color: blueviolet;
+    padding: 15px 20px;
+    transform: translateY(30PX);
+    
+}
+
+.conn button img{
+margin-right: 5px;
+transform: translateY(3px);
+}
+
+.conn button:hover{
+    background: rgb(7, 7, 43);
+    color: white;
+}
+
+.toper{
+    margin-top: 20px;
+}
+
+.conn h5{
+    font-size: large;
+    color: rgb(0, 0, 0,0.4);
+}
+
+
+
+/*LOGIN PAGES*/
+
+
+.above-part .activee{
+    position: relative;
+    color: white;
+    background-color: blueviolet;
+    border-radius: 5px;
+    padding: 15px 30px;
+    transform: translateY(-20px);
+
+}
+
+
+.above-part .activee:hover{
+    background-color: rgb(26, 2, 87);
+
+}
+
+h1{
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 5px;
+    color: blueviolet;
+
+}
+
+
+
+.login-form{
+    background-color: blueviolet;
+    width: 50%;
+    border-radius: 20px;
+    margin-left: 20%;
+    height: 350px;
+    align-items: center;
+    text-align: justify;
+}
+
+.login-form button{
+    margin-top: 20px;
+    margin-right: 3px;
+    padding: 10px 35px;
+    border-radius: 5px;
+    border: none;
+}
+
+.first-button{
+    background-color: black;
+    color: white;
+    margin-left: 120px;
+}
+
+.form-style{
+    display:block;
+    margin-top: 10px;
+    align-items: center;
+    margin-left: 7%;
+    background-color: white;
+    width: 85%;
+    height: 390px;
+    border-radius: 20px;
+}
+
+
+.form-style input{
+    padding: 15px 130px;
+    margin-top: 20px;
+  margin-left: 10%;
+  background-color: rgb(128, 128, 128,0.6);
+  border: none;
+  border-radius: 2px;
+
+}
+
+.form-style img{
+    transform: translateX(-55px);
+    align-items: center;
+    top: 0;
+    left: 0;
+    position: relative;
+    opacity: 50%;
+    
+}
+
+#login{
+    padding: 15px 80px;
+    background-color: rgb(13, 13, 107, 0.7);
+    color:white
+   
+}
+
+.login-form p{
+    float: right;
+    margin-top: 100px;
+    margin-right:35px ;
+}
+
+.sign p, .sign button{
+    margin-top:80px ;
+    float: left;
+    display: block;
+margin-left: 48px;
+text-decoration: none;
+    
+}
+.sign p{
+    transform: translateY(27px);
+}
+
+.sign  button{
+    transform: translateX(-220px);
+    color: white;
+    background-color: rgb(13, 13, 107 ,0.7);
+    border-radius: 2px;
+  
+}
+
