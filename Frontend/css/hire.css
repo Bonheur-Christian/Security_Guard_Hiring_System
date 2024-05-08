@@ -1,0 +1,132 @@
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+.logoimg {
+    width: 80px;
+    height: 90px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.logo {
+    color: purple;
+    font-size: 30px;
+    font-weight: 900;
+    position: absolute;
+    top: 0;
+    left: 60px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 900px;
+    text-align: center;
+    margin-top: 80px;
+    color: purple;
+}
+
+.bord {
+    height: 500px;
+    width: 500px;
+    padding-top: 15px;
+    background-color: #d5d2d2;
+    border-radius: 20px;
+    margin: auto;
+    margin-bottom: 5px;
+}
+
+.pers {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 900px;
+
+}
+
+div label {
+    margin-left: 50px;
+}
+
+#name {
+    margin-left: 4rem;
+}
+
+#email {
+    margin-left: 4.3rem;
+}
+
+#phone {
+    margin-left: 4rem;
+}
+
+#address {
+    margin-left: 3.3rem;
+}
+
+#gender {
+    margin-left: 3.6rem;
+}
+
+#guards {
+    margin-left: 3.6rem;
+}
+
+input {
+    width: 250px;
+    height: 25px;
+    padding-left: 10px;
+    margin-left: 40px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin-bottom: 30px;
+}
+
+input::placeholder {
+    color: #dedada;
+}
+
+.bord2 {
+    height: 540px;
+    width: 500px;
+    padding-top: 15px;
+    background-color: #afafaf;
+    margin-top: 30px;
+    margin: auto;
+}
+
+.exper {
+    text-align: center;
+}
+
+#exp {
+    height: 300px;
+    width: 400px;
+    margin-left: 20px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.sub {
+    background: #128f40;
+    color: white;
+    width: 150px;
+    height: 45px;
+    text-align: center;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: 600px;
+    margin-left: 180px;
+    margin-top: 20px;
+    outline: none;
+    cursor: pointer;
+    border: none;
+
+}
+
+.copy {
+    text-align: center;
+}

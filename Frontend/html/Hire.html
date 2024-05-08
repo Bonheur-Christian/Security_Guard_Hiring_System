@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hiring Form</title>
+  <link rel="stylesheet" href="../css/hire.css" />
+</head>
+
+<body>
+  <div class="container">
+    <img class="logoimg" src="../images/prot.png" alt="" />
+    <p class="logo">E-SECU<span class="logosp">RITY</span></p>
+    <h2 class="title">Hiring Form</h2>
+    <div class="bord">
+      <p class="pers">Personal Identification</p>
+      <form action="../../Backend/Client/hire.php" method="POST">
+        <div>
+          <label for="">Name</label>
+          <input placeholder="Enter your name..." type="text" name="name" id="name" required/>
+        </div>
+        <div>
+          <label for="">Email</label>
+          <input placeholder="Enter your email..." type="text" name="email" id="email" required/>
+        </div>
+        <div>
+          <label for="">Password</label>
+          <input placeholder="Enter your email..." type="password" name="password" id="Password" required/>
+        </div>
+        <div>
+          <label for="">Phone</label>
+          <input placeholder="Enter your phone..." type="text" name="tel" id="phone" required/>
+        </div>
+        <div>
+          <label for="">Gender</label>
+
+          <input placeholder="Enter your gender..." type="text" name="gender" id="gender" required/>
+        </div>
+        <div>
+          <label for="">Guards</label>
+          <input placeholder="Enter number of guards..." type="text" name="guardsNumber" id="guards" required/>
+        </div>
+        <div>
+          <label for="">Address</label>
+          <input placeholder="Enter your address..." type="text" name="address" id="address"required />
+        </div>
+        <button class="sub">Submit</button>
+      </form>
+    </div>
+
+    <hr>
+    <p class="copy">&copy;2024 all rights reserved</p>
+  </div>
+</body>
+
+</html>

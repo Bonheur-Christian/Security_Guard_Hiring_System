@@ -1,0 +1,98 @@
+*{
+    font-family: "Poppins", sans-serif;
+}
+.home{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background-color: linear-gradient(to right,rgba(98, 0, 255, 0.6), rgba(101, 48, 73, 0.6) ); 
+    background-image: url(); 
+    background-position: center;
+    background-size: cover;  */
+}
+
+.logoimg{
+    width: 80px;
+    height: 90px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.logo{
+    color: purple;
+    font-size: 30px;
+    font-weight: 900;
+    position: absolute;
+    top: 0;
+    left: 60px;
+}
+.logosp{
+    color: black;
+}
+.about{
+    color: purple;
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 90px;
+}
+.our{
+    max-width: 450px;
+    line-height: 25px;
+    margin-top: 140px;
+    margin-left: 250px;
+}
+.bg{
+    height: 300px;
+    width: 320px;
+    transform: translateX(700px);
+    margin-top: -300px;
+}
+.foot{
+    width: 100%;
+    height: 50px;
+    background-color: purple;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 100px;
+    border-radius: 2px;
+}
+.foot a{
+    color: black;
+    text-decoration: none;
+    padding-top: 20px;
+}
+.copy{
+    text-align: center;
+    margin-bottom: 100px;
+}
+.last{
+    display: none;
+}
+
+@media (max-width:500px) {
+    .our{
+        margin-left: 10px;
+        font-size: 30px;
+        min-width:620px;
+        line-height: 40px;
+        word-wrap: break-word; 
+        overflow-wrap: break-word;
+    }
+    .about{
+        text-align: center;
+    }
+    .bg{
+        margin-top: 50px;
+       margin-left: -550px;
+    }
+    .foot{
+        width: 630px;
+    }
+    .copy{
+        text-align: center;
+    }
+    
+}
