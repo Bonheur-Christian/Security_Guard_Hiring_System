@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/04a03ed080.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<style>
+    .add {
+        color: white;
+        margin-left: 1px;
+        padding: 10px 10px;
+        border-radius: 10px;
+        color: white;
+        font-weight: 500;
+        font-size: large;
+        border: none;
+        background-color: rgb(131, 43, 214);
+    }
+
+    .add:hover {
+        background-color: rgb(6, 6, 44);
+    }
+
+    #accepted {
+        margin: 0.5rem;
+        width: 100px;
+        height: 40px;
+        border: none;
+        border-radius: 2rem;
+        color: white;
+        font-weight: bolder;
+        background-color: rgb(78, 173, 119);
+    }
+
+    #rejected {
+        margin: 0.5rem;
+        width: 100px;
+        height: 40px;
+        border: none;
+        border-radius: 2rem;
+        color: white;
+        font-weight: bolder;
+        background-color: rgb(238, 86, 10);
+    }
+</style>
+
+<body>
+
+    <div class="sideBar">
+        <ul class="sideBarUl">
+            <li class="SideBarBtn Dashboard">
+                <a href="../html/heroPage.html" class="upperSideBarBtn">
+                    <i class="fa-regular fa-chart-bar sideBarIcon" style="color: #000000;"></i>
+                    Home
+                </a>
+            </li>
+            <li class="SideBarBtn"><a href="allguards.html" class="upperSideBarBtn"><i
+                        class="fa-solid fa-person-military-pointing sideBarIcon" style="color: #000000;"></i>Security
+                    Guards</a></li>
+            <li class="SideBarBtn"><a href="#" class="upperSideBarBtn"><i
+                        class="fa-solid fa-code-pull-request sideBarIcon" style="color: #000000;"></i>Hiring
+                    requests</a></li>
+            <li class="SideBarBtn"><a href="#" class="upperSideBarBtn"><i class="fa-regular fa-file-lines sideBarIcon"
+                        style="color: #000000;"></i>Hiring reports</a></li>
+            <hr class="sideBarHr">
+            <li class="SideBarBtn"><a href="#" class="SettingsSideBarBtn"><i class="fa-solid fa-gear sideBarIcon"
+                        style="color: #000000;"></i>Settings</a></li>
+            <li class="logOut SideBarLogOut"><a href="#" class="LogOutSideBarBtn"><i
+                        class="fa-solid fa-right-from-bracket sideBarIcon"></i>Log out</a></li>
+        </ul>
+    </div>
+    <div class="menuBar">
+        <a href="#" class="esec esecBtn">e-sec</a>
+        <div class="menuLeftBtn">
+            <a href="#"><i class="fa-regular fa-bell"></i></a>
+            <a href="#" id="profile"><img class="profileImg" src="../images/profile.png" alt="profile"></a>
+        </div>
+    </div>
+    <div class="dashboardContent">
+
+        <h1 class="dashboardTitle">Dashboard</h1>
+        <h1 class="welcomeBack">Welcome back,</h1>
+        <p class="adminTitle">Admin</p>
+
+        <a href="addGuard.html"><button class="add">Add Guard</button></a>
+        <div class="dashboardBoxes">
+            <div class="currentGuards middle box">
+                <p>Current Guards</p>
+                <h1 id="availableGuards"></h1>
+            </div>
+            <div class="totalHiringRequests middle box">
+                <p>Total hiring requests</p>
+                <h1 id="hiringRequests"></h1>
+            </div>
+            <div class="acceptedRequests middle box">
+                <p>Accepted requests</p>
+                <h1 id="acceptedRequests"></h1>
+            </div>
+            <div class="rejectedRequests box">
+                <p>Rejected requests</p>
+                <h1 id="rejectedRequests"></h1>
+            </div>
+        </div>
+        <!-- 
+        <div class="requests">
+            <button id="requests">Requests</button>
+        </div> -->
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Guards Number</th>
+                    <th>Request State</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // var requestsBtn = document.getElementById("requests");
+            const container = document.querySelector("tbody");
+
+            fetch("../../Backend/admin/displayRequests.php")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error({ message: "failed" })
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.length > 0) {
+                        data.forEach(obj => {
+                            let client_email;
+                            const tr = document.createElement("tr");
+                            Object.values(obj).forEach((value, index) => {
+                                if (index == 1) client_email = value //  1 is the index of email from the values of a single object
+                                const td = document.createElement("td");
+                                td.innerText = value;
+                                tr.appendChild(td);
+                            })
+                            container.appendChild(tr);
+                            const Accepted = document.createElement("button");
+                            Accepted.innerText = "Accepted"
+                            Accepted.setAttribute("id", "accepted")
+                            tr.appendChild(Accepted);
+                            Accepted.addEventListener("click", () => {
+                                alert("Request Accepted");
+                                fetch("../../Backend/admin/acceptedRequest.php?client_email=" + client_email + "")
+                                    .then((response) => {
+                                        if (!response.ok) {
+                                            throw new Error({ message: "failed" })
+                                        } else[
+                                            Accepted.disabled = true
+                                        ]
+                                        return response.json();
+                                    })
+                                    .catch((err) => {
+                                        console.log(err, "error occured storing data");
+                                    })
+                            })
+                            const Rejected = document.createElement("button");
+                            Rejected.innerText = "Rejected";
+                            Rejected.setAttribute("id", "rejected")
+                            tr.appendChild(Rejected);
+                            const rejected = document.getElementById("rejected")
+                            rejected.addEventListener("click", (e) => {
+                                e.preventDefault();
+                                fetch("../../Backend/admin/rejectedRequest.php?client_email=" + client_email + "")
+                                    .then((response) => {
+                                        if (!response.ok) {
+                                            throw new Error({ message: "failed in rejected requests" })
+                                        } else {
+                                            alert("Request rejected");
+                                            rejected.disabled = true
+                                        }
+                                        return response.json()
+                                    })
+                                    .catch((err) => {
+                                        console.log(err);
+                                    })
+
+                            })
+
+                        });
+                    } else {
+                        console.log("invalid data format");
+                    }
+
+                })
+                .catch(err => console.log(err));
+        })
+
+        const availableGuards = document.getElementById("availableGuards");
+        availableGuards.innerText = ""
+
+        fetch("../../Backend/admin/displayGuards.php")
+            .then((response) => {
+                if (!response.ok) {
+                    console.log("failed to update the number of the available guards");
+                }
+
+                return response.json();
+            })
+            .then((data) => {
+                const numberOfGuards = data.length
+                availableGuards.innerText = numberOfGuards;
+            })
+            .catch((err) => {
+                console.log({ message: err });
+            })
+        const hiringRequests = document.getElementById("hiringRequests");
+        hiringRequests.innerText = "";
+        fetch("../../Backend/admin/displayRequests.php")
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error("failed to display the hiring requests")
+                }
+
+                return response.json();
+            })
+            .then((data) => {
+                const numberOfRequests = data.length
+                hiringRequests.innerText = numberOfRequests
+            })
+            .catch((err) => {
+                console.log({ message: err });
+            })
+        fetch("../../Backend/admin/displayAcceptedRequests.php")
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error("failed to update the value of accepted requests");
+                }
+                return response.json(response);
+            })
+            .then((data) => {
+                const totalNumberOfAcceptedRequests = data.length
+                const acceptedRequests = document.getElementById("acceptedRequests");
+                acceptedRequests.innerText = totalNumberOfAcceptedRequests;
+
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+        fetch("../../Backend/admin/displayRejectedRequests.php")
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error("failed to display the rejected request number");
+                }
+                return response.json();
+            })
+            .then((data) => {
+                const totalNumberOfRejectedRequests = data.length
+                const rejectedRequest = document.getElementById("rejectedRequests")
+                rejectedRequests.innerText = totalNumberOfRejectedRequests;
+                console.log(totalNumberOfRejectedRequests);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    </script>
+</body>
+
+</html>

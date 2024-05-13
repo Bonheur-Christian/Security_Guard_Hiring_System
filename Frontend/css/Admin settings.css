@@ -1,0 +1,396 @@
+body {
+    background-color: #BBAEC8;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    /* display: flex; */
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+li {
+    list-style: none;
+}
+
+h1 {
+    margin: 0;
+}
+
+/* menu bar */
+
+.menuBar {
+    height: 50px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    background-color: #BBAEC8;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.menuLeftBtn {
+    display: flex;
+}
+
+.menuBar a {
+    line-height: 0px;
+    margin: auto 5px;
+}
+
+.profileImg {
+    height: 40px;
+    width: 40px;
+    border-radius: 100px;
+    background-color: #353535;
+}
+
+#profile {
+    margin-right: 20px;
+}
+
+.fa-bell {
+    font-size: 25px;
+}
+
+/* menu bar */
+
+/* side bar */
+
+.sideBarUl {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0px 10px 20px 10px;
+    margin: 0;
+}
+
+.SideBarBtn {
+    list-style: none;
+    margin-bottom: 5px;
+    padding: 15px;
+    background-color: #BBAEC8;
+    border-radius: 20px;
+}
+
+.SideBarBtn:hover {
+    background-color: #d8d8d8;
+}
+
+.Dashboard {
+    margin-top: 80px;
+}
+
+.sideBar {
+    position: fixed;
+    width: 220px;
+    height: 100%;
+    background-color: #BBAEC8;
+}
+
+.esec {
+    font-size: 40px;
+    font-weight: bold;
+    color: #114E60;
+}
+
+.esecBtn {
+    padding: 0px 15px;
+}
+
+/* .logOut {
+    margin-top: 80px;
+} */
+
+
+
+.SideBarLogOut {
+    list-style: none;
+    margin-bottom: 5px;
+    padding: 15px;
+    background-color: #BBAEC8;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 5px;
+}
+
+.SideBarLogOut a {
+    margin: auto;
+}
+
+.SideBarLogOut a:hover {
+    color: #890000;
+}
+
+.fa-right-from-bracket:hover {
+    color: #890000;
+}
+
+.sideBarIcon {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.sideBarHr {
+    width: 150px;
+    height: 1px;
+    margin: 10px 0px 15px 15px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    background-color: #000000;
+}
+
+/* side bar */
+
+/* Admin Settings Content */
+
+.adminSettingsInfoContent {
+    /* margin-top: px; */
+    top: 0;
+    padding: 60px;
+    margin-left: 220px;
+    min-height: 500px;
+    min-width: 500px;
+    /* flex: 1; */
+    background-color: #e1e1e1;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+/* Admin System Settings */
+
+.companyInfo {
+    /* min-width: 600px; */
+    margin-top: 40px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 30px 30px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.companyProfilePic {
+    width: 200px;
+    background-color: #353535;
+    float: left;
+}
+
+.companyLogo {
+    width: 180px;
+    height: 180px;
+    float: left;
+    /* border-radius: 100px;
+    background-color: #353535;
+    margin: auto; */
+}
+
+.companyInfoTitle {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.companyInfoP {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.companyInfo i {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 7px;
+}
+
+.companyInfoContent {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Admin System Settings */
+
+/* Guard Person Info */
+
+.adminPersonalInfo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profileInfo {
+    min-width: 190px;
+    height: 250px;
+    background-color: #fff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 10px 10px;
+}
+
+.profilePic {
+    width: 180px;
+    height: 180px;
+    border-radius: 100px;
+    background-color: #353535;
+    margin: auto;
+}
+
+.profileName {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    /* align-items: center; */
+}
+
+.profileName i {
+    /* float: right; */
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.profileName p {
+    font-weight: bolder;
+    /* float: left; */
+    font-size: 20px;
+    margin: 0;
+}
+
+.personalInfo {
+    width: 100%;
+    height: 220;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px 30px;
+    margin-left: 40px;
+}
+
+.personalInfoTitle {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.personalInfoContent {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.personalInfoP {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.personalInfoTitle i {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 7px;
+}
+
+.personalInfoP1 {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+.personalInfoP2 {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    margin: 7px 0px 10px;
+}
+
+/* Admin Person Info */
+
+/* Admin Security Settings */
+
+.adminSecurityInfo {
+    /* min-width: 600px; */
+    margin-top: 40px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 30px 30px;
+}
+
+.adminSecurityInfoTitle {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.adminSecurityInfoP {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.adminSecurityInfo i {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 7px;
+}
+
+/* Admin Security Settings */
+
+/* Admin System Settings */
+
+.adminSystemSettings {
+    /* min-width: 600px; */
+    margin-top: 40px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 30px 30px;
+}
+
+.adminSystemSettingsTitle {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.adminSystemSettingsP {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.adminSystemSettings i {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 7px;
+}
+
+/* Admin System Settings */
+
+
+
+/* Shadow effects */
+
+.shadowEffect {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.shadowEffect:hover {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Shadow effects */
+
+/* Dashboard Content */

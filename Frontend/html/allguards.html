@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>All guards</title>
+</head>
+<style>
+    table {
+        width: 50%;
+        margin-left: 4rem;
+        border-radius: 8px;
+    }
+
+    button {
+        background-color: rgb(48, 7, 87);
+        color: white;
+        font-weight: bold;
+        width: 10rem;
+        margin: 2rem;
+        margin-left: 6rem;
+        height: 3rem;
+        border: none;
+        border-radius: 0.5rem;
+    }
+
+    button:hover {
+        background-color: blueviolet;
+    }
+</style>
+
+<body>
+    <h1>Guards Available</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Gaurd ID</th>
+                <th>Names</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // const addguard = document.getElementById("allguards");
+            const container = document.querySelector("tbody");
+
+
+            fetch("../../Backend/admin/displayGuards.php")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("failed to fetch the data");
+                    }
+                    return response.json();
+                    console.log(response);
+                })
+                .then(data => {
+                    if (data.length > 0) {
+                        data.forEach(obj => {
+                            const tr = document.createElement("tr");
+                            Object.values(obj).forEach(value => {
+                                const td = document.createElement("td");
+                                td.innerHTML = value;
+                                tr.appendChild(td);
+                            })
+                            container.appendChild(tr);
+                        })
+                    } else {
+                        console.log("Invalid data format");
+                    }
+                })
+                .catch(err => {
+                    console.log(err, "error occured in fetching the data");
+                })
+        })
+    </script>
+</body>
+
+</html>

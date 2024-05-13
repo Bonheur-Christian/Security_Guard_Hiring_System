@@ -59,19 +59,19 @@
             <ul>
                 <li><a href="../html/home.html">Home</a></li>
 
-                <li> <a href="#" class="activee">LOG IN</a></li>
+                <li> <a href="#" class="activee">SIGN UP</a></li>
                 <li> <a href="#">About</a>
                 </li>
 
             </ul>
         </div>
 
-        <H1>LOGIN</H1>
+        <H1>LOGIN AS CLIENT</H1>
         <div class="login-form">
             <button type="submit" class="first-button"><a href="../html/admin.html">ADMIN</a></button>
             <button type="submit"> CLIENT</button>
-            <form action="" class="form-style">
-                <input type="email" name="email" id="email" class="email" placeholder="EMAIL ">
+            <form action="../../Backend/Client/signup.php" class="form-style" method="POST">
+                <input type="text" name="name" id="name" class="name" placeholder="NAME... ">
                 <img src="../images/envelope.png" alt="" height="25px">
                 <br> <input type="password" name="password" id="password" class="password" placeholder="PASSWORD">
                 <img src="../images/hide.png" alt="" height="27px">
@@ -80,7 +80,7 @@
                 <P>Forgot Password?<a href="">Reset it.</a></P>
                 <span class="sign">
                     <P>Having no account?</P>
-                    <button>SIGN IN </button>
+                    <button>SIGN UP </button>
                 </span>
             </form>
         </div>

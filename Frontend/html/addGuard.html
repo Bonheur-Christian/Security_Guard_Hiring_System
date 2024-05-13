@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Guard</title>
+</head>
+<body>
+    <form action="../../Backend/admin/addGuard.php" method=POST>
+        <h1>Add Guard</h1>
+        <label for="name">Guard Names</label>
+        <input type="text" name="name" id="name" required>
+        <label for="age">Guard Age</label>
+        <input type="number" name="age" id="age" required>
+
+        <button type="submit" id="addGuard">Save</button>
+
+    </form>
+</body>
+</html>
