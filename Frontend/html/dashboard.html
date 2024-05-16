@@ -148,6 +148,7 @@
                                 tr.appendChild(td);
                             })
                             container.appendChild(tr);
+
                             const Accepted = document.createElement("button");
                             Accepted.innerText = "Accepted"
                             Accepted.setAttribute("id", "accepted")
@@ -167,19 +168,20 @@
                                         console.log(err, "error occured storing data");
                                     })
                             })
+
                             const Rejected = document.createElement("button");
                             Rejected.innerText = "Rejected";
                             Rejected.setAttribute("id", "rejected")
                             tr.appendChild(Rejected);
-                            const rejected = document.getElementById("rejected")
-                            rejected.addEventListener("click", (e) => {
+                            Rejected.addEventListener("click", (e) => {
                                 e.preventDefault();
+                                alert("Request rejected");
                                 fetch("../../Backend/admin/rejectedRequest.php?client_email=" + client_email + "")
                                     .then((response) => {
                                         if (!response.ok) {
                                             throw new Error({ message: "failed in rejected requests" })
                                         } else {
-                                            alert("Request rejected");
+
                                             rejected.disabled = true
                                         }
                                         return response.json()
@@ -197,75 +199,76 @@
 
                 })
                 .catch(err => console.log(err));
+
+
+            const availableGuards = document.getElementById("availableGuards");
+            availableGuards.innerText = ""
+
+            fetch("../../Backend/admin/displayGuards.php")
+                .then((response) => {
+                    if (!response.ok) {
+                        console.log("failed to update the number of the available guards");
+                    }
+
+                    return response.json();
+                })
+                .then((data) => {
+                    const numberOfGuards = data.length
+                    availableGuards.innerText = numberOfGuards;
+                })
+                .catch((err) => {
+                    console.log({ message: err });
+                })
+            const hiringRequests = document.getElementById("hiringRequests");
+            hiringRequests.innerText = "";
+            fetch("../../Backend/admin/displayRequests.php")
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error("failed to display the hiring requests")
+                    }
+
+                    return response.json();
+                })
+                .then((data) => {
+                    const numberOfRequests = data.length
+                    hiringRequests.innerText = numberOfRequests
+                })
+                .catch((err) => {
+                    console.log({ message: err });
+                })
+            fetch("../../Backend/admin/displayAcceptedRequests.php")
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error("failed to update the value of accepted requests");
+                    }
+                    return response.json();
+                })
+                .then((data) => {
+                    const totalNumberOfAcceptedRequests = data.length
+                    const acceptedRequests = document.getElementById("acceptedRequests");
+                    acceptedRequests.innerText = totalNumberOfAcceptedRequests;
+
+                })
+                .catch((err) => {
+                    console.log(err);
+                })
+            fetch("../../Backend/admin/displayRejectedRequests.php")
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error("failed to display the rejected request number");
+                    }
+                    return response.json();
+                })
+                .then((data) => {
+                    console.log(data);
+                    const totalNumberOfRejectedRequests = data.length
+                    const rejectedRequest = document.getElementById("rejectedRequests")
+                    rejectedRequest.innerText = totalNumberOfRejectedRequests
+                })
+                .catch((err) => {
+                    console.log(err);
+                })
         })
-
-        const availableGuards = document.getElementById("availableGuards");
-        availableGuards.innerText = ""
-
-        fetch("../../Backend/admin/displayGuards.php")
-            .then((response) => {
-                if (!response.ok) {
-                    console.log("failed to update the number of the available guards");
-                }
-
-                return response.json();
-            })
-            .then((data) => {
-                const numberOfGuards = data.length
-                availableGuards.innerText = numberOfGuards;
-            })
-            .catch((err) => {
-                console.log({ message: err });
-            })
-        const hiringRequests = document.getElementById("hiringRequests");
-        hiringRequests.innerText = "";
-        fetch("../../Backend/admin/displayRequests.php")
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error("failed to display the hiring requests")
-                }
-
-                return response.json();
-            })
-            .then((data) => {
-                const numberOfRequests = data.length
-                hiringRequests.innerText = numberOfRequests
-            })
-            .catch((err) => {
-                console.log({ message: err });
-            })
-        fetch("../../Backend/admin/displayAcceptedRequests.php")
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error("failed to update the value of accepted requests");
-                }
-                return response.json(response);
-            })
-            .then((data) => {
-                const totalNumberOfAcceptedRequests = data.length
-                const acceptedRequests = document.getElementById("acceptedRequests");
-                acceptedRequests.innerText = totalNumberOfAcceptedRequests;
-
-            })
-            .catch((err) => {
-                console.log(err);
-            })
-        fetch("../../Backend/admin/displayRejectedRequests.php")
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error("failed to display the rejected request number");
-                }
-                return response.json();
-            })
-            .then((data) => {
-                const totalNumberOfRejectedRequests = data.length
-                const rejectedRequest = document.getElementById("rejectedRequests")
-                rejectedRequests.innerText = totalNumberOfRejectedRequests;
-                console.log(totalNumberOfRejectedRequests);
-            })
-            .catch((err) => {
-                console.log(err);
-            })
     </script>
 </body>
 

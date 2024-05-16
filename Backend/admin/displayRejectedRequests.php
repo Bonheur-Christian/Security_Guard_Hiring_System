@@ -9,8 +9,6 @@ $connection = new mysqli($server, $username, $password, $db);
 if($connection->connect_error){
     die("connection to the database failed".$connection->connect_error);
 }
-$client_email = $_GET['']
-
 $query = "SELECT client_name, client_email, client_phoneNumber FROM rejectedRequests";
 $result  = mysqli_query($connection, $query);
 

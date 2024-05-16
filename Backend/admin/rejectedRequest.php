@@ -13,8 +13,6 @@ if($connection->connect_error){
     $query = "INSERT INTO rejectedrequests(client_name, client_email, client_phoneNumber) SELECT client_name,client_email,phoneNumber FROM requests WHERE client_email = '$client_email' "; 
     $result  = mysqli_query($connection, $query);
     echo($result);
-
-    $acceptedRequest = array();
     if($result){
         echo "<script>alert('request rejected')</script>";             
 

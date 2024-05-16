@@ -21,6 +21,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = trim($_POST['name']);// Trim extra spaces
     $password = $_POST['password'];
 
+    $_SESSION['username'] = $username;
+    echo $_SESSION;
+
     if($username!=="admin"){
         echo "<script>alert('Not admin')</script>";
         echo "<script>window.location.href='../../Frontend/html/client.html'</script>";
