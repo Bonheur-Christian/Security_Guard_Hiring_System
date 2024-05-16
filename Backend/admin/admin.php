@@ -15,25 +15,33 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+
+
 // Validate POST request
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $username = trim($_POST['name']);// Trim extra spaces
+    $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $_SESSION['username'] = $username;
-    echo $_SESSION;
+    $_SESSION['email'] = $email;
 
     if($username!=="admin"){
         echo "<script>alert('Not admin')</script>";
         echo "<script>window.location.href='../../Frontend/html/client.html'</script>";
     }else{
-        $query = "INSERT INTO admin(name, password) VALUES('$username', '$password')";
+        $query = "INSERT INTO admin(name,email,  password) VALUES('$username','$email', '$password')";
 
         $result  = mysqli_query($conn, $query);
 
         if($result){
+            header('Content-Type: application/json');
+
+            echo  json_encode($_SESSION);
             header('Location:../../Frontend/html/dashboard.html');
+
+            exit;
+
         }else{
             echo "failed";
         }

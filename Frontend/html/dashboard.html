@@ -58,18 +58,18 @@
                     Home
                 </a>
             </li>
-            <li class="SideBarBtn"><a href="allguards.html" class="upperSideBarBtn"><i
+            <li class="SideBarBtn"><a href="security guards.html" class="upperSideBarBtn"><i
                         class="fa-solid fa-person-military-pointing sideBarIcon" style="color: #000000;"></i>Security
                     Guards</a></li>
-            <li class="SideBarBtn"><a href="#" class="upperSideBarBtn"><i
+            <!-- <li class="SideBarBtn"><a href="#" class="upperSideBarBtn"><i
                         class="fa-solid fa-code-pull-request sideBarIcon" style="color: #000000;"></i>Hiring
-                    requests</a></li>
+                    requests</a></li> -->
             <li class="SideBarBtn"><a href="#" class="upperSideBarBtn"><i class="fa-regular fa-file-lines sideBarIcon"
                         style="color: #000000;"></i>Hiring reports</a></li>
             <hr class="sideBarHr">
-            <li class="SideBarBtn"><a href="#" class="SettingsSideBarBtn"><i class="fa-solid fa-gear sideBarIcon"
-                        style="color: #000000;"></i>Settings</a></li>
-            <li class="logOut SideBarLogOut"><a href="#" class="LogOutSideBarBtn"><i
+            <li class="SideBarBtn"><a href="Admin settings.html" class="SettingsSideBarBtn"><i
+                        class="fa-solid fa-gear sideBarIcon" style="color: #000000;"></i>Settings</a></li>
+            <li class="logOut SideBarLogOut"><a href="" class="LogOutSideBarBtn" id="logOut"><i
                         class="fa-solid fa-right-from-bracket sideBarIcon"></i>Log out</a></li>
         </ul>
     </div>
@@ -86,7 +86,6 @@
         <h1 class="welcomeBack">Welcome back,</h1>
         <p class="adminTitle">Admin</p>
 
-        <a href="addGuard.html"><button class="add">Add Guard</button></a>
         <div class="dashboardBoxes">
             <div class="currentGuards middle box">
                 <p>Current Guards</p>
@@ -105,10 +104,7 @@
                 <h1 id="rejectedRequests"></h1>
             </div>
         </div>
-        <!-- 
-        <div class="requests">
-            <button id="requests">Requests</button>
-        </div> -->
+        <h1>Hiring Requests Made</h1>
 
         <table>
             <thead>
@@ -268,7 +264,14 @@
                 .catch((err) => {
                     console.log(err);
                 })
+            const logOut = document.getElementById("logOut");
+            logOut.addEventListener("click", (e) => {
+                e.preventDefault();
+                window.location.href = "../../Backend/admin/Logout.php"
+            })
+
         })
+
     </script>
 </body>
 

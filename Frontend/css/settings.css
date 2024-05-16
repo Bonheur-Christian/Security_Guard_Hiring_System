@@ -24,7 +24,7 @@ h1 {
 /* menu bar */
 
 .menuBar {
-    height: 50px;
+    height: 60px;
     width: 100%;
     position: sticky;
     top: 0;
@@ -34,65 +34,6 @@ h1 {
     display: flex;
     justify-content: space-between;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-}
-
-.menuLeftBtn {
-    display: flex;
-}
-
-.menuBar a {
-    line-height: 0px;
-    margin: auto 5px;
-}
-
-.profileImg {
-    height: 40px;
-    width: 40px;
-    border-radius: 100px;
-    background-color: #353535;
-}
-
-#profile {
-    margin-right: 20px;
-}
-
-.fa-bell {
-    font-size: 25px;
-}
-
-/* menu bar */
-
-/* side bar */
-
-.sideBarUl {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 0px 10px 20px 10px;
-    margin: 0;
-}
-
-.SideBarBtn {
-    list-style: none;
-    margin-bottom: 5px;
-    padding: 15px;
-    background-color: #BBAEC8;
-    border-radius: 20px;
-}
-
-.SideBarBtn:hover {
-    background-color: #d8d8d8;
-}
-
-.Dashboard {
-    margin-top: 80px;
-}
-
-.sideBar {
-    position: fixed;
-    width: 220px;
-    height: 100%;
-    background-color: #BBAEC8;
 }
 
 .esec {
@@ -105,32 +46,124 @@ h1 {
     padding: 0px 15px;
 }
 
+.menuLeftBtn {
+    display: flex;
+}
+
+.menuBar a {
+    line-height: 0px;
+    margin: auto 5px;
+}
+
+.profileImg{
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    /* background-color: #353535; */
+    padding: 5px;
+}
+
+.profileImg:hover{
+    background-color: #ccbedb;
+}
+
+#profile {
+    margin: auto 20px auto 10px;
+}
+
+.fa-bell {
+    font-size: 25px;
+}
+
+/* menu bar */
+
+/* side bar */
+
+.sideBar {
+    position: fixed;
+    width: 220px;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: #BBAEC8;
+    overflow: hidden;
+}
+
+.sideBarUl {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    /* justify-content: flex-end; */
+    padding: 0px 10px 20px 10px;
+    margin: 0;
+    position: relative;
+}
+
+.SideBarBtn {
+    display: flex;
+    list-style: none;
+    margin-bottom: 5px;
+    padding: 15px;
+    background-color: #BBAEC8;
+    border-radius: 20px;
+}
+
+.active {
+    display: flex;
+    list-style: none;
+    margin-bottom: 5px;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+.active:hover {
+   background-color: #cacaca;
+}
+
+.SideBarBtn p, .active p{
+    margin: 0;
+}
+
+.SideBarBtn:hover {
+    background-color: #d8d8d8;
+    box-shadow: 5px 3px 5px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
+}
+
+.Dashboard {
+    margin-top: 80px;
+}
+
 /* .logOut {
     margin-top: 80px;
 } */
 
 
 
-.SideBarLogOut {
+.SideBarLogout {
     list-style: none;
     margin-bottom: 5px;
-    padding: 15px;
-    background-color: #BBAEC8;
+    /* padding: 15px; */
     border-radius: 20px;
     position: absolute;
-    bottom: 5px;
+    bottom: 3rem;
 }
 
-.SideBarLogOut a {
-    margin: auto;
+.logoutBtn {
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    padding: 15px 100px 15px 15px;
 }
 
-.SideBarLogOut a:hover {
-    color: #890000;
+.logoutBtn p {
+    margin: 0;
 }
 
-.fa-right-from-bracket:hover {
-    color: #890000;
+.logoutBtn:hover {
+    background-color: #d8d8d8;
+    box-shadow: 5px 3px 5px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
 }
 
 .sideBarIcon {
@@ -169,41 +202,47 @@ h1 {
 /* Admin System Settings */
 
 .companyInfo {
-    /* min-width: 600px; */
-    margin-top: 40px;
+    margin-bottom: 40px;
     background-color: #fff;
     border-radius: 20px;
     padding: 30px 30px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .companyProfilePic {
     width: 200px;
-    background-color: #353535;
-    float: left;
+    margin: 0 50px;
+    border-radius: 2rem;
+    margin-left: -0.5rem;
 }
 
 .companyLogo {
     width: 180px;
     height: 180px;
-    float: left;
-    /* border-radius: 100px;
-    background-color: #353535;
-    margin: auto; */
+    
+}
+
+.companyDescription {
+    /* margin-right: 50px; */
+    display: inline;
+    text-align: right;
+    width: 100%;
 }
 
 .companyInfoTitle {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
 }
 
 .companyInfoP {
     margin: 0;
     padding: 0;
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 0.7;
+    color: #5F0F95;
 }
 
 .companyInfo i {
@@ -215,6 +254,7 @@ h1 {
 .companyInfoContent {
     display: flex;
     justify-content: space-between;
+    text-align: left;
 }
 
 /* Admin System Settings */
@@ -304,8 +344,8 @@ h1 {
 .personalInfoP1 {
     margin: 0;
     padding: 0;
-    font-size: 15px;
-    font-weight: bolder;
+    font-size: 14px;
+    font-weight: 700;
 }
 
 .personalInfoP2 {

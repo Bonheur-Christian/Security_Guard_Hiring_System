@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/04a03ed080.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/security guards.css">
+    <script src="../../js/security guards.js"></script>
+</head>
+
+<body>
+
+    <!-- side bar -->
+
+    <div class="sideBar">
+        <div class="sideBarUl">
+            <a class="Dashboard SideBarBtn" href="dashboard.html">
+                <i class="fa-regular fa-chart-bar sideBarIcon" style="color: #000000;"></i>
+                <p class="upperSideBarBtn">Dashboard</p>
+            </a>
+
+            <a class="active" href="security guards.html">
+                <i class="fa-solid fa-person-military-pointing sideBarIcon" style="color: #000000;"></i>
+                <p class="upperSideBarBtn">Security Guards</p>
+            </a>
+
+            <a class="SideBarBtn" href="hiring requests.html">
+                <i class="fa-solid fa-code-pull-request sideBarIcon" style="color: #000000;"></i>
+                <p class="upperSideBarBtn">Hiring requests</p>
+            </a>
+<!-- 
+            <a class="SideBarBtn" href="hiring report.html">
+                <i class="fa-regular fa-file-lines sideBarIcon" style="color: #000000;"></i>
+                <p class="upperSideBarBtn">Hiring reports</p>
+            </a> -->
+
+            <hr class="sideBarHr">
+
+            <a class="SideBarBtn" href="Admin settings.html">
+                <i class="fa-solid fa-gear sideBarIcon" style="color: #000000;"></i>
+                <p class="SettingsSideBarBtn">Settings</p>
+            </a>
+
+            <a class="SideBarLogout" href="">
+                <div class="logoutBtn">
+                    <i class="fa-solid fa-right-from-bracket sideBarIcon"></i>
+                    <p class="LogOutSideBarBtn">Log out</p>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+    <!-- side bar -->
+
+    <!-- menu bar -->
+
+    <div class="menuBar">
+        <a href="#" class="esec esecBtn">e-sec</a>
+        <div class="menuLeftBtn">
+            <a href="#"><i class="fa-regular fa-bell"></i></a>
+            <a href="#" id="profile"><img class="profileImg" src="../images/profile.png" alt="profile"></a>
+        </div>
+    </div>
+
+    <!-- menu bar -->
+
+    <div class="securityGuardsContent">
+
+        <h1 class="securityGuardsTitle">Security Guards</h1>
+
+        <div class="addSearch">
+            <p class="addGuardBtn">Add a new guard</p>
+            <div class="searchContainer">
+                <input type="text" name="search" class="searchBox" placeholder="Search Guards...">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+
+        <div class="addGuard">
+            <div class="addGuardFormContainer">
+                <h1>Add a new guard</h1>
+                <form method="post" action="../../Backend/admin/addGuard.php">
+                    <div class="namesInputs">
+                        <div>
+                            <label class="label" for="">First name</label>
+                            <input class="toBeCleared" type="text" name="fname">
+                        </div>
+                        <div>
+                            <label class="label" for="">Last name</label>
+                            <input class="toBeCleared" type="text" name="lname">
+                        </div>
+                    </div>
+                    <label class="label" for="">Phone</label>
+                    <input class="input toBeCleared" type="number" name="phoneNumber">
+                    <label class="label" for="">Age</label>
+                    <input class="input toBeCleared" type="number" name="age">
+                    <a class="formButtons close" href="#">Cancel</a>
+                    <button class="formButtons" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Guard_id</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Age</th>
+                    <th>Phone Number</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // const addguard = document.getElementById("allguards");
+            const container = document.querySelector("tbody");
+
+
+            fetch("../../Backend/admin/displayGuards.php")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("failed to fetch the data");
+                    }
+                    return response.json();
+                    console.log(response);
+                })
+                .then(data => {
+                    if (data.length > 0) {
+                        data.forEach(obj => {
+                            const tr = document.createElement("tr");
+                            Object.values(obj).forEach(value => {
+                                const td = document.createElement("td");
+                                td.innerHTML = value;
+                                tr.appendChild(td);
+                            })
+                            container.appendChild(tr);
+                        })
+                    } else {
+                        console.log("Invalid data format");
+                    }
+                })
+                .catch(err => {
+                    console.log(err, "error occured in fetching the data");
+                })
+
+            const addGuardBtn = document.querySelector('.addGuardBtn');
+            const addGuardDiv = document.querySelector('.addGuard');
+            const cancelLink = document.querySelector('.close');
+            const addGuardFormContainer = document.querySelector('.addGuardFormContainer');
+            const inputFields = document.querySelectorAll('.toBeCleared');
+
+            addGuardBtn.addEventListener('click', function () {
+                addGuardDiv.style.display = 'flex';
+            });
+
+            cancelLink.addEventListener('click', function () {
+                addGuardDiv.style.display = 'none';
+                clearInputFields();
+            });
+
+            document.body.addEventListener('click', function (event) {
+                if (!addGuardFormContainer.contains(event.target) && event.target !== addGuardBtn) {
+                    addGuardDiv.style.display = 'none';
+                    clearInputFields();
+                }
+            });
+
+            function clearInputFields() {
+                inputFields.forEach(function (input) {
+                    input.value = '';
+                });
+            }
+        })
+    </script>
+
+
+</body>
+
+</html>

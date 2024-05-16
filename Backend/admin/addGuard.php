@@ -18,16 +18,18 @@ if ($conn->connect_error) {
 // Validate POST request
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $username = trim($_POST['name']);// Trim extra spaces
+    $fname = trim($_POST['fname']);
+    $lname = trim($_POST['lname']);
     $age = $_POST['age']; 
+    $phoneNumber = $_POST['phoneNumber']; 
   
-$query = "INSERT INTO guards(guard_name, guard_age) VALUES('$username', '$age')";
+$query = "INSERT INTO guards( guard_fname,  guard_lname, guard_age,phoneNumber) VALUES('$fname', '$lname','$age','$phoneNumber')";
 
 $result  = mysqli_query($conn, $query);
 
 if($result){
     echo "<script>alert('Guard is successful added')</script>";
-    echo "<script>window.location.href='../../Frontend/html/allguards.html'</script>";
+    echo "<script>window.location.href='../../Frontend/html/security guards.html'</script>";
     
 }else{
     echo "failed";
