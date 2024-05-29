@@ -26,11 +26,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $_SESSION['email'] = $email;
 
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
     if($username!=="admin"){
         echo "<script>alert('Not admin')</script>";
         echo "<script>window.location.href='../../Frontend/html/client.html'</script>";
     }else{
-        $query = "INSERT INTO admin(name,email,  password) VALUES('$username','$email', '$password')";
+        $query = "INSERT INTO admin(name,email,  password) VALUES('$username','$email', '$hashedPassword')";
 
         $result  = mysqli_query($conn, $query);
 

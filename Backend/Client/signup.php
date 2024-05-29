@@ -10,9 +10,10 @@ if ($conn->connect_error) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
     $password = $_POST['password']; 
+    
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-
-    $query = "INSERT INTO clients(name, password) VALUES ('$name','$password')";
+    $query = "INSERT INTO clients(name, password) VALUES ('$name','$hashedPassword')";
     $result = mysqli_query($conn, $query);
 
     if($result){
